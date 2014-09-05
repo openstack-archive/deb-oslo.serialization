@@ -49,7 +49,7 @@ ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats ; \
 		rm -f $$TEMP_REZ ; \
 		testr-python$$PYMAJOR slowest ; \
-	  done
+	  done ; \
 	fi
 endif
 
