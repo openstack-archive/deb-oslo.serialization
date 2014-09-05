@@ -1,0 +1,5 @@
+python-oslo.serialization (0.1.0-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #760539)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 05 Sep 2014 11:16:12 +0800
