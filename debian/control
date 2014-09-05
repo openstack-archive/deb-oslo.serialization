@@ -16,9 +16,16 @@ Build-Depends-Indep: python-hacking,
                      python-mock (>= 1.0),
                      python-netaddr (>= 0.7.6),
                      python-oslo.i18n (>= 0.2.0),
+                     python-oslo.utils (>= 0.2.0),
                      python-oslosphinx (>= 2.2.0.0~a2),
                      python-oslotest (>= 1.1.0.0~a1),
-                     python-simplejson (>= 2.2.0)
+                     python-simplejson (>= 2.2.0),
+                     python3-mock (>= 1.0),
+                     python3-netaddr (>= 0.7.6),
+                     python3-oslo.i18n (>= 0.2.0),
+                     python3-oslo.utils (>= 0.2.0),
+                     python3-oslotest (>= 1.1.0.0~a1),
+                     python3-simplejson (>= 2.2.0)
 Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-oslo.serialization.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-oslo.serialization.git
