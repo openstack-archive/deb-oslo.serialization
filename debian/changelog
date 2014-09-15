@@ -1,4 +1,4 @@
-python-oslo.serialization (0.1.0-2) unstable; urgency=medium
+python-oslo.serialization (0.1.0-2) experimental; urgency=medium
 
   * Added Ubuntu patch: Deal with built-in datetime. Thanks to James page for
     the bug report and patch (Closes: #761634).
