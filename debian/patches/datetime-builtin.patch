@@ -1,0 +1,19 @@
+Description: Deal with built-in datetime
+ Some python distributions (>= Ubuntu 14.10) return (built-in) for
+ the datetime module - support this as an acceptable result.
+Author: James Page <james.page@ubuntu.com>
+Forwarded: https://review.openstack.org/121476
+Bug-Ubuntu: https://bugs.launchpad.net/oslo.serialization/+bug/1369460
+
+--- a/tests/test_jsonutils.py
++++ b/tests/test_jsonutils.py
+@@ -221,7 +221,8 @@ class ToPrimitiveTestCase(test_base.Base
+         x = [datetime, foo, dir]
+         ret = jsonutils.to_primitive(x)
+         self.assertEqual(len(ret), 3)
+-        self.assertTrue(ret[0].startswith(six.u("<module 'datetime' from ")))
++        self.assertTrue(ret[0].startswith(six.u("<module 'datetime' from ")) or
++                        ret[0].startswith(six.u("<module 'datetime' (built-in)")))
+         if six.PY3:
+             self.assertTrue(ret[1].startswith(
+                 '<function ToPrimitiveTestCase.test_nasties.<locals>.foo at 0x'
