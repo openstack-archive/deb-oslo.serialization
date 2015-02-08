@@ -13,12 +13,13 @@ Build-Depends: debhelper (>= 9),
                python3-all,
                python3-pbr,
                python3-setuptools
-Build-Depends-Indep: python-hacking,
+Build-Depends-Indep: python-coverage (>= 3.6),
+                     python-hacking,
                      python-mock (>= 1.0),
                      python-netaddr (>= 0.7.12),
-                     python-oslo.i18n (>= 0.3.0),
-                     python-oslo.utils (>= 0.3.0),
-                     python-oslosphinx (>= 2.2.0.0~a2),
+                     python-oslo.i18n (>= 1.0.0),
+                     python-oslo.utils (>= 1.1.0),
+                     python-oslosphinx (>= 2.2.0.0),
                      python-oslotest (>= 1.1.0.0),
                      python-simplejson (>= 2.2.0),
                      python3-mock (>= 1.0),
@@ -37,7 +38,8 @@ Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: python-babel (>= 1.3),
          python-iso8601 (>= 0.1.9),
-         python-oslo.utils (>= 0.3.0),
+         python-pbr,
+         python-oslo.utils (>= 1.1.0),
          python-six (>= 1.7.0),
          ${misc:Depends},
          ${python:Depends}
@@ -52,7 +54,8 @@ Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: python3-babel (>= 1.3),
          python3-iso8601 (>= 0.1.9),
-         python3-oslo.utils (>= 0.3.0),
+         python3-pbr,
+         python3-oslo.utils (>= 1.1.0),
          python3-six (>= 1.7.0),
          ${misc:Depends},
          ${python3:Depends}
