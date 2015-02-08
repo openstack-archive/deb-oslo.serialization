@@ -1,1 +1,2 @@
 fix-namespaced-oslo-imports.patch
+do-not-test-the-namespace-warning.patch
