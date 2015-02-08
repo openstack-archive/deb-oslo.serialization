@@ -25,7 +25,7 @@ import six
 import six.moves.xmlrpc_client as xmlrpclib
 
 from oslo.i18n import fixture
-from oslo.serialization import jsonutils
+from oslo_serialization import jsonutils
 
 
 class JSONUtilsTestMixin(object):
