@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
 Uploaders: Thomas Goirand <zigo@debian.org>
 Build-Depends: debhelper (>= 9),
+               dh-python,
                openstack-pkg-tools,
                python-all (>= 2.6.6-3~),
                python-pbr,
@@ -26,7 +27,7 @@ Build-Depends-Indep: python-hacking,
                      python3-oslo.utils (>= 0.3.0),
                      python3-oslotest (>= 1.1.0.0),
                      python3-simplejson (>= 2.2.0)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-oslo.serialization.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-oslo.serialization.git
 Homepage: https://github.com/openstack/oslo.serialization
