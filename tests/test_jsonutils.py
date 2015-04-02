@@ -16,6 +16,7 @@
 import collections
 import datetime
 import json
+import uuid
 
 import mock
 import netaddr
@@ -68,6 +69,15 @@ class JSONUtilsTestMixin(object):
 
         self.assertEqual(expected, fp.getvalue())
 
+    def test_dumps_uuid(self):
+        self.assertEqual('"87edfaf4-9bff-11e4-82bd-b7b4e88d3780"',
+                         jsonutils.dumps(
+                             uuid.UUID("87edfaf49bff11e482bdb7b4e88d3780")))
+
+    def test_dump_set(self):
+        # Only test with one entry because the order is random :]
+        self.assertEqual("[1]", jsonutils.dumps(set([1])))
+
     def test_loads(self):
         self.assertEqual({'a': 'b'}, jsonutils.loads('{"a": "b"}'))
 
@@ -117,6 +127,9 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
     def test_list(self):
         self.assertEqual(jsonutils.to_primitive([1, 2, 3]), [1, 2, 3])
 
+    def test_set(self):
+        self.assertEqual(jsonutils.to_primitive(set([1, 2, 3])), [1, 2, 3])
+
     def test_empty_list(self):
         self.assertEqual(jsonutils.to_primitive([]), [])
 
@@ -134,6 +147,11 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
         self.assertEqual(jsonutils.to_primitive(x),
                          '1920-02-03T04:05:06.000007')
+
+    def test_uuid(self):
+        x = uuid.uuid4()
+        self.assertEqual(jsonutils.to_primitive(x),
+                         six.text_type(x))
 
     def test_datetime_preserve(self):
         x = datetime.datetime(1920, 2, 3, 4, 5, 6, 7)
@@ -261,6 +279,17 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
         ret = jsonutils.to_primitive(thing)
         self.assertEqual({'ip_addr': '1.2.3.4'}, ret)
+
+    def test_dumps_ipaddr(self):
+        thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
+        ret = jsonutils.dumps(thing)
+        self.assertEqual('{"ip_addr": "1.2.3.4"}', ret)
+
+    def test_dump_ipaddr(self):
+        thing = {'ip_addr': netaddr.IPAddress('1.2.3.4')}
+        fp = six.StringIO()
+        jsonutils.dump(thing, fp)
+        self.assertEqual('{"ip_addr": "1.2.3.4"}', fp.getvalue())
 
     def test_message_with_param(self):
         msg = self.trans_fixture.lazy('A message with param: %s')
