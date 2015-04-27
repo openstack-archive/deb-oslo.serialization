@@ -24,35 +24,18 @@ override_dh_install:
 
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	echo "===> Running tests"
-	set -ex ; for i in 2.7 ; do \
+	@echo "===> Running tests"
+	set -e ; set -x ; for i in 2.7 $(PYTHON3S) ; do \
 		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
 		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
 		rm -rf .testrepository ; \
 		testr-python$$PYMAJOR init ; \
-		TEMP_REZ=`mktemp -t` && \
+		TEMP_REZ=`mktemp -t` ; \
 		PYTHONPATH=$(CURDIR) PYTHON=python$$i testr-python$$PYMAJOR run --subunit | tee $$TEMP_REZ | subunit2pyunit ; \
 		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats ; \
 		rm -f $$TEMP_REZ ; \
 		testr-python$$PYMAJOR slowest ; \
 	done
-# This is disabled until I find a way to fix the missing __init__.py in
-# Python 3.4 in the namespaced oslo.*
-#	set -ex ; if [ `lsb_release -c | awk '{print $2}'` = "wheezy" ] ; then \
-#		echo "No Python3 unit tests in Wheezy" ; \
-#	else \
-#	  for i in $(PYTHON3S) ; do \
-#		PYMAJOR=`echo $$i | cut -d'.' -f1` ; \
-#		echo "===> Testing with python$$i (python$$PYMAJOR)" ; \
-#		rm -rf .testrepository ; \
-#		testr-python$$PYMAJOR init ; \
-#		TEMP_REZ=`mktemp -t` && \
-#		PYTHONPATH=$(CURDIR) PYTHON=python$$i testr-python$$PYMAJOR run --subunit | tee $$TEMP_REZ | subunit2pyunit ; \
-#		cat $$TEMP_REZ | subunit-filter -s --no-passthrough | subunit-stats ; \
-#		rm -f $$TEMP_REZ ; \
-#		testr-python$$PYMAJOR slowest ; \
-#	  done ; \
-#	fi
 endif
 
 override_dh_clean:
