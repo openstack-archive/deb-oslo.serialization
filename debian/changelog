@@ -1,6 +1,7 @@
-python-oslo.serialization (1.4.0-1) UNRELEASED; urgency=medium
+python-oslo.serialization (1.4.0-1) unstable; urgency=medium
 
   * New upstream release.
+  * Uploading to unstable.
   * Fixed (build-)depends for this release.
 
  -- Thomas Goirand <zigo@debian.org>  Sun, 08 Feb 2015 17:14:50 +0100

@@ -6,7 +6,7 @@ Uploaders: Thomas Goirand <zigo@debian.org>
 Build-Depends: debhelper (>= 9),
                dh-python,
                openstack-pkg-tools,
-               python-all (>= 2.6.6-3~),
+               python-all,
                python-pbr,
                python-setuptools,
                python-sphinx,
@@ -38,6 +38,8 @@ Build-Depends-Indep: python-babel,
                      python3-simplejson,
                      python3-six (>= 1.9.0),
                      python3-tz,
+                     subunit,
+                     testrepository,
 Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-oslo.serialization.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-oslo.serialization.git
