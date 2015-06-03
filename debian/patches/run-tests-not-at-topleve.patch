@@ -5,14 +5,15 @@ Author: Thomas Goirand <zigo@debian.org>
 Forwarded: not-needed
 Last-Update: 2015-04-15
 
---- python-oslo.serialization-1.4.0.orig/.testr.conf
-+++ python-oslo.serialization-1.4.0/.testr.conf
+--- a/.testr.conf
++++ b/.testr.conf
 @@ -2,6 +2,6 @@
  test_command=OS_STDOUT_CAPTURE=${OS_STDOUT_CAPTURE:-1} \
               OS_STDERR_CAPTURE=${OS_STDERR_CAPTURE:-1} \
               OS_TEST_TIMEOUT=${OS_TEST_TIMEOUT:-60} \
--             ${PYTHON:-python} -m subunit.run discover -t ./ ./tests $LISTOPT $IDOPTION
+-             ${PYTHON:-python} -m subunit.run discover -t ./ . $LISTOPT $IDOPTION
 +             ${PYTHON:-python} -m subunit.run discover -t ./ ./oslo_serialization $LISTOPT $IDOPTION
  test_id_option=--load-list $IDFILE
- test_list_option=--list
+-test_list_option=--list
 \ No newline at end of file
++test_list_option=--list
