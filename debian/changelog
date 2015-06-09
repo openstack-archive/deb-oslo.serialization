@@ -1,4 +1,4 @@
-python-oslo.serialization (1.6.0-1) UNRELEASED; urgency=medium
+python-oslo.serialization (1.6.0-1) experimental; urgency=medium
 
   * Team upload.
   * New upstream release:
@@ -9,7 +9,7 @@ python-oslo.serialization (1.6.0-1) UNRELEASED; urgency=medium
     - d/control: Add transitional packages for *oslo-serialization.
   * d/*: wrap-and-sort.
 
- -- James Page <james.page@ubuntu.com>  Wed, 03 Jun 2015 09:08:40 +0100
+ -- James Page <james.page@ubuntu.com>  Tue, 09 Jun 2015 08:51:15 +0100
 
 python-oslo.serialization (1.4.0-1) unstable; urgency=medium
 
