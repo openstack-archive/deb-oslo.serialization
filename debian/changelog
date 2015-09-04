@@ -6,6 +6,7 @@ python-oslo.serialization (1.8.0-1) experimental; urgency=medium
   [ Thomas Goirand ]
   * New upstream release.
   * Fixed build-depends for this release.
+  * Refreshed patch.
 
  -- Thomas Goirand <zigo@debian.org>  Fri, 04 Sep 2015 11:07:51 +0000
 
