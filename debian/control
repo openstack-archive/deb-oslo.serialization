@@ -96,24 +96,27 @@ Description: utilities for serialization , especially JSON - doc
 
 Package: python-oslo-serialization
 Section: oldlibs
+Priority: extra
 Architecture: all
 Depends: python-oslo.serialization,
          ${misc:Depends},
-Description: transitional dummy package for python-oslo-serialization.
+Description: transitional dummy package for python-oslo-serialization
  This transitional package is safe to remove.
 
 Package: python-oslo-serialization-doc
 Section: oldlibs
+Priority: extra
 Architecture: all
 Depends: python-oslo.serialization-doc,
          ${misc:Depends},
-Description: transitional dummy package for python-oslo-serialization-doc.
+Description: transitional dummy package for python-oslo-serialization-doc
  This transitional package is safe to remove.
 
 Package: python3-oslo-serialization
 Section: oldlibs
+Priority: extra
 Architecture: all
 Depends: python3-oslo.serialization,
          ${misc:Depends},
-Description: transitional dummy package for python3-oslo-serialization.
+Description: transitional dummy package for python3-oslo-serialization
  This transitional package is safe to remove.
