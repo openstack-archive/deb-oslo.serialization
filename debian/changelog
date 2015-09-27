@@ -2,6 +2,8 @@ python-oslo.serialization (1.9.0-1) experimental; urgency=medium
 
   * New upstream release.
   * Fixed (build-)depends for this release.
+  * Drop no namepsace test patch.
+  * Rebased tz version patch.
 
  -- Thomas Goirand <zigo@debian.org>  Sun, 27 Sep 2015 19:04:38 +0200
 
