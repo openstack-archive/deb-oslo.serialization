@@ -2,6 +2,7 @@ python-oslo.serialization (2.0.0-1) experimental; urgency=medium
 
   * New upstream release.
   * Fixed (build-)depends for this release.
+  * Rebased pytz version patch.
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 01 Dec 2015 11:35:06 +0100
 
