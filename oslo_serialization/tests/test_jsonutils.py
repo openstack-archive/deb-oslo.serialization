@@ -46,6 +46,9 @@ class JSONUtilsTestMixin(object):
     def test_dumps(self):
         self.assertEqual('{"a": "b"}', jsonutils.dumps({'a': 'b'}))
 
+    def test_dump_as_bytes(self):
+        self.assertEqual(b'{"a": "b"}', jsonutils.dump_as_bytes({'a': 'b'}))
+
     def test_dumps_namedtuple(self):
         n = collections.namedtuple("foo", "bar baz")(1, 2)
         self.assertEqual('[1, 2]', jsonutils.dumps(n))
@@ -194,6 +197,52 @@ class ToPrimitiveTestCase(test_base.BaseTestCase):
         # If the cycle isn't caught, to_primitive() will eventually result in
         # an exception due to excessive recursion depth.
         jsonutils.to_primitive(x)
+
+    def test_items(self):
+        # Use items() when iteritems() is not available.
+        class ItemsClass(object):
+            def __init__(self):
+                self.data = dict(a=1, b=2, c=3)
+
+            def items(self):
+                return self.data.items()
+
+        x = ItemsClass()
+        p = jsonutils.to_primitive(x)
+        self.assertEqual(p, {'a': 1, 'b': 2, 'c': 3})
+
+    def test_precedence_items_iteritems(self):
+        class ItemsIterItemsClass(object):
+            def items(self):
+                return {'items': 'items'}
+
+            def iteritems(self):
+                return {'iteritems': 'iteritems'}
+
+        x = ItemsIterItemsClass()
+        p = jsonutils.to_primitive(x)
+        # Prefer iteritems over items
+        self.assertEqual(p, {'iteritems': 'iteritems'})
+
+    def test_mapping(self):
+        # Make sure collections.Mapping is converted to a dict
+        # and not a list.
+        class MappingClass(collections.Mapping):
+            def __init__(self):
+                self.data = dict(a=1, b=2, c=3)
+
+            def __getitem__(self, val):
+                return self.data[val]
+
+            def __iter__(self):
+                return iter(self.data)
+
+            def __len__(self):
+                return len(self.data)
+
+        x = MappingClass()
+        p = jsonutils.to_primitive(x)
+        self.assertEqual(p, {'a': 1, 'b': 2, 'c': 3})
 
     def test_instance(self):
         class MysteryClass(object):
