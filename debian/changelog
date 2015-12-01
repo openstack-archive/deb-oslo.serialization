@@ -1,3 +1,9 @@
+python-oslo.serialization (2.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 01 Dec 2015 11:35:06 +0100
+
 python-oslo.serialization (1.9.0-2) unstable; urgency=medium
 
   * Uploading to unstable.
