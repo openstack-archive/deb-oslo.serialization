@@ -1,3 +1,9 @@
+python-oslo.serialization (2.3.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- David Della Vecchia <ddv@canonical.com>  Wed, 24 Feb 2016 13:57:26 -0500
+
 python-oslo.serialization (2.2.0-1) experimental; urgency=medium
 
   * New upstream release.
