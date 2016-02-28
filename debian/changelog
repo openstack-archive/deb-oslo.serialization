@@ -1,8 +1,12 @@
 python-oslo.serialization (2.3.0-1) UNRELEASED; urgency=medium
 
+  [ David Della Vecchia ]
   * New upstream release.
   * d/control: Align depends with upstream.
   * d/p/no-version-for-python-tz.patch: Rebased.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URLs (https).
 
  -- David Della Vecchia <ddv@canonical.com>  Wed, 24 Feb 2016 13:57:26 -0500
 
