@@ -12,6 +12,7 @@ python-oslo.serialization (2.4.0-1) experimental; urgency=medium
   * New upstream release.
   * d/control: Align depends with upstream.
   * Standards-Version: 3.9.7 (no change).
+  * Fixed debian/copyright ordering.
 
  -- Thomas Goirand <zigo@debian.org>  Thu, 03 Mar 2016 02:40:10 +0000
 
