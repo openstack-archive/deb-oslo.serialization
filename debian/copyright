@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: oslo.serialization
-Source: git://github.com/openstack/oslo.serialization.git
+Source: https://github.com/openstack/oslo.serialization
 
 Files: *
 Copyright: (c) 2013,
