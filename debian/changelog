@@ -1,4 +1,4 @@
-python-oslo.serialization (2.7.0-1) UNRELEASED; urgency=medium
+python-oslo.serialization (2.7.0-1) experimental; urgency=medium
 
   [ Ondřej Nový ]
   * Standards-Version is 3.9.8 now (no change)
@@ -10,7 +10,10 @@ python-oslo.serialization (2.7.0-1) UNRELEASED; urgency=medium
   * d/gbp.conf: Update branch for Newton.
   * d/control: Align (Build-)Depends with upstream.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Wed, 01 Jun 2016 10:36:28 -0400
+  [ Thomas Goirand ]
+  * Added Corey Bryant <corey.bryant@canonical.com> in Uploaders:.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 05 Jun 2016 15:37:53 +0000
 
 python-oslo.serialization (2.4.0-2) unstable; urgency=medium
 
