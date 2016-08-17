@@ -1,0 +1,10 @@
+Code-Review+1: Haifeng Yan <yanheven@qq.com>
+Code-Review+2: Joshua Harlow <jxharlow@godaddy.com>
+Code-Review+2: ChangBo Guo(gcb) <glongwave@gmail.com>
+Workflow+1: ChangBo Guo(gcb) <glongwave@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 04 Aug 2016 13:31:57 +0000
+Reviewed-on: https://review.openstack.org/342115
+Project: openstack/deb-oslo.serialization
+Branch: refs/heads/master
